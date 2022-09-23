@@ -37,5 +37,10 @@ pipeline {
             sh(script: "trivy pixerflame/jenkins-course")
          }
       }
+      stage('Run Anchore') {
+         steps {
+            anchore name: 'anchore_images'
+         }
+      }
 }
 }
